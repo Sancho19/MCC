@@ -1,27 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import Link from "next/link";
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Message Sent:", formData);
-    // Handle form submission logic
-  };
-
   return (
     <>
       <nav className="bg-[#8c5c3b] text-white shadow-md p-4 flex justify-between items-center">
@@ -116,7 +100,6 @@ export default function ContactUs() {
 
             {/* Contact Form */}
             <motion.form
-              onSubmit={handleSubmit}
               className="bg-white text-[#5a4636] p-6 rounded-2xl shadow-lg border border-[#d9a36a] flex flex-col gap-4 relative z-10"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -127,8 +110,6 @@ export default function ContactUs() {
                 <input
                   type="text"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
                 />
@@ -139,8 +120,6 @@ export default function ContactUs() {
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
                 />
@@ -152,8 +131,6 @@ export default function ContactUs() {
                 </label>
                 <textarea
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   className="w-full mt-1 p-3 border rounded-lg h-28 focus:ring focus:ring-[#d9a36a] transition-all"
                 ></textarea>

@@ -178,6 +178,12 @@ export default function EventsPage() {
           </motion.div>
         </motion.div>
       </div>
+      <footer className="bg-gradient-to-r from-black to-gray-900 text-white text-center p-4">
+        <p className="text-sm">
+          © {new Date().getFullYear()} Mzansi Craft Council | Designed by
+          WebCraft Solutions
+        </p>
+      </footer>
     </>
   );
 }

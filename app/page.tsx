@@ -16,16 +16,17 @@ export default function Home() {
         <h1 className="text-2xl font-bold">Mzansi Craft Council</h1>
         <div className="space-x-4">
           {[
-            "About",
-            "Membership",
-            "Directory",
-            "Events",
-            "Contact",
-            "Register",
-          ].map((item, index) => (
-            <Link key={index} href={`/${item.toLowerCase()}`}>
+            { href: "/", label: "Home" },
+            { href: "/about", label: "About" },
+            { href: "/membership", label: "Membership" },
+            { href: "/directory", label: "Directory" },
+            { href: "/event", label: "Events" },
+            { href: "/contact", label: "Contact" },
+            { href: "/crafter", label: "Register" },
+          ].map((link, index) => (
+            <Link key={index} href={link.href}>
               <motion.button className="hover:bg-[#a47551] p-2 rounded">
-                {item}
+                {link.label}
               </motion.button>
             </Link>
           ))}

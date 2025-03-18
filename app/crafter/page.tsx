@@ -1,29 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 export default function CrafterRegistration() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    craftType: "",
-    location: "",
-    portfolio: "",
-    description: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted", formData);
-    // Handle form submission logic
-  };
-
   return (
     <>
       <nav className="bg-[#8c5c3b] text-white shadow-md p-4 flex justify-between items-center">
@@ -75,17 +55,12 @@ export default function CrafterRegistration() {
             visibility, networking opportunities, and market access.
           </p>
 
-          <form
-            className="bg-white text-[#5a4636] p-6 rounded-2xl shadow-lg border border-[#d9a36a] flex flex-col gap-4 relative z-10"
-            onSubmit={handleSubmit}
-          >
+          <form className="bg-white text-[#5a4636] p-6 rounded-2xl shadow-lg border border-[#d9a36a] flex flex-col gap-4 relative z-10">
             <div>
               <label className="block text-sm font-medium">Full Name</label>
               <input
                 type="text"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
                 required
                 className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
               />
@@ -97,8 +72,6 @@ export default function CrafterRegistration() {
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
                 />
@@ -110,8 +83,6 @@ export default function CrafterRegistration() {
                 <input
                   type="tel"
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
                   required
                   className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
                 />
@@ -122,8 +93,6 @@ export default function CrafterRegistration() {
               <label className="block text-sm font-medium">Craft Type</label>
               <select
                 name="craftType"
-                value={formData.craftType}
-                onChange={handleChange}
                 required
                 className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
               >
@@ -146,8 +115,6 @@ export default function CrafterRegistration() {
               <input
                 type="text"
                 name="location"
-                value={formData.location}
-                onChange={handleChange}
                 required
                 className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
               />
@@ -160,8 +127,6 @@ export default function CrafterRegistration() {
               <input
                 type="url"
                 name="portfolio"
-                value={formData.portfolio}
-                onChange={handleChange}
                 className="w-full mt-1 p-3 border rounded-lg focus:ring focus:ring-[#d9a36a] transition-all"
               />
             </div>
@@ -172,8 +137,6 @@ export default function CrafterRegistration() {
               </label>
               <textarea
                 name="description"
-                value={formData.description}
-                onChange={handleChange}
                 required
                 className="w-full mt-1 p-3 border rounded-lg h-28 focus:ring focus:ring-[#d9a36a] transition-all"
               ></textarea>
