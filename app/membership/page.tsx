@@ -22,6 +22,7 @@ export default function Membership() {
         <h1 className="text-2xl font-bold">Mzansi Craft Council</h1>
         <div className="space-x-4">
           {[
+            { href: "/", label: "Home" },
             { href: "/about", label: "About" },
             { href: "/membership", label: "Membership" },
             { href: "/directory", label: "Directory" },
@@ -117,7 +118,7 @@ export default function Membership() {
               <h3 className="text-2xl font-semibold">{plan.title}</h3>
               <p className="text-[#5a4636] mt-2">{plan.text}</p>
               <motion.button
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.95 }}
                 className={`${plan.color} text-white px-4 py-2 rounded mt-4`}
               >

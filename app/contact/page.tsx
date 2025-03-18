@@ -27,9 +27,9 @@ export default function ContactUs() {
       <nav className="bg-[#8c5c3b] text-white shadow-md p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold">Mzansi Craft Council</h1>
         <div className="space-x-4">
-          {/* <Link href="/">
+          <Link href="/">
             <button className="hover:bg-[#a47551] p-2 rounded">Home</button>
-          </Link> */}
+          </Link>
           <Link href="/about">
             <button className="hover:bg-[#a47551] p-2 rounded">About</button>
           </Link>
@@ -162,7 +162,6 @@ export default function ContactUs() {
               <motion.button
                 type="submit"
                 className="w-full bg-[#8c5c3b] text-white p-3 rounded-lg text-lg font-semibold hover:bg-[#a47551] transition-all shadow-md"
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Send Message

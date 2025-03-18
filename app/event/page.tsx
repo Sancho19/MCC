@@ -75,6 +75,9 @@ export default function EventsPage() {
       >
         <h1 className="text-2xl font-bold">Mzansi Craft Council</h1>
         <div className="space-x-4">
+          <Link href="/">
+            <button className="hover:bg-[#a47551] p-2 rounded">Home</button>
+          </Link>
           <Link href="/about">
             <button className="hover:bg-[#a47551] p-2 rounded">About</button>
           </Link>
@@ -147,7 +150,6 @@ export default function EventsPage() {
               filteredEvents.map((event) => (
                 <motion.div
                   key={event.id}
-                  whileHover={{ scale: 1.05 }}
                   className="bg-white p-6 rounded-lg shadow-lg border border-[#d9a36a]"
                 >
                   <h2 className="text-2xl font-semibold mb-2">{event.title}</h2>

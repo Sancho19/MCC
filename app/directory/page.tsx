@@ -16,6 +16,7 @@ export default function Directory() {
         <h1 className="text-2xl font-bold">Mzansi Craft Council</h1>
         <div className="space-x-4">
           {[
+            { href: "/", label: "Home" },
             { href: "/about", label: "About" },
             { href: "/membership", label: "Membership" },
             { href: "/directory", label: "Directory" },
@@ -37,7 +38,7 @@ export default function Directory() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative h-[150vh] bg-cover bg-center flex flex-col items-center justify-center text-center text-black"
+        className="relative min-h-screen bg-cover bg-center flex flex-col items-center justify-center text-center text-black"
         style={{ backgroundImage: "url('/african2.jpg')" }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
@@ -53,10 +54,7 @@ export default function Directory() {
             Find a Crafter
           </h2>
           <div className="flex justify-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center bg-white p-3 rounded-full shadow-lg w-3/4 max-w-2xl border border-[#d9a36a]"
-            >
+            <motion.div className="flex items-center bg-white p-3 rounded-full shadow-lg w-3/4 max-w-2xl border border-[#d9a36a]">
               <input
                 placeholder="Search crafters, categories, or locations..."
                 className="flex-1 px-4 py-2 rounded-full border-none outline-none text-[#5a4636] bg-transparent placeholder-[#8c5c3b]"
@@ -98,7 +96,7 @@ export default function Directory() {
                 <h4 className="text-xl font-semibold">Crafter Name</h4>
                 <p className="text-[#5a4636] mt-2">Specialization | Location</p>
                 <motion.button
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.03 }}
                   className="mt-4 bg-[#8c5c3b] text-white px-4 py-2 rounded"
                 >
                   View Profile
@@ -119,7 +117,7 @@ export default function Directory() {
             </p>
             <Link href="/crafter">
               <motion.button
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.03 }}
                 className="mt-4 bg-white hover:bg-[#8c5c3b] hover:text-white text-[#8c5c3b] px-6 py-2 rounded text-lg"
               >
                 Register Now

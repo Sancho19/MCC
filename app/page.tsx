@@ -58,14 +58,14 @@ export default function Home() {
           </p>
           <div className="mt-6 space-x-4">
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.9 }}
               className="bg-[#d9a36acc] hover:bg-[#c48b50] text-white px-6 py-2 rounded"
             >
               Join the Directory
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.9 }}
               className="bg-white text-[#5a4636] px-6 py-2 border rounded"
             >
@@ -111,7 +111,7 @@ export default function Home() {
                   "Offering workshops, mentorship programs, and business skills."}
               </p>
               <motion.button
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.9 }}
                 className={`mt-4 text-white px-4 py-2 rounded ${
                   index < 2 ? "bg-[#8c5c3b]" : "bg-[#b33b3b]"
@@ -132,7 +132,7 @@ export default function Home() {
       </footer>
 
       <motion.button
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.9 }}
         className="fixed bottom-6 right-6 bg-[#8c5c3b] text-white p-4 rounded-full shadow-lg hover:bg-[#a47551]"
       >

@@ -10,9 +10,9 @@ export default function About() {
       <nav className="bg-[#8c5c3b] text-white shadow-md p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold">Mzansi Craft Council</h1>
         <div className="space-x-4">
-          {/* <Link href="/">
+          <Link href="/">
             <button className="hover:bg-[#a47551] p-2 rounded">Home</button>
-          </Link> */}
+          </Link>
           <Link href="/about">
             <button className="hover:bg-[#a47551] p-2 rounded">About</button>
           </Link>
