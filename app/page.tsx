@@ -1,103 +1,143 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-[#f4ede4] text-[#5a4636]">
+      {/* Navbar */}
+      <motion.nav
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="bg-[#8c5c3b] text-white shadow-md p-4 flex justify-between items-center"
+      >
+        <h1 className="text-2xl font-bold">Mzansi Craft Council</h1>
+        <div className="space-x-4">
+          {[
+            "About",
+            "Membership",
+            "Directory",
+            "Events",
+            "Contact",
+            "Register",
+          ].map((item, index) => (
+            <Link key={index} href={`/${item.toLowerCase()}`}>
+              <motion.button className="hover:bg-[#a47551] p-2 rounded">
+                {item}
+              </motion.button>
+            </Link>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </motion.nav>
+
+      {/* Hero Section */}
+      <header
+        className="relative h-[100vh] bg-cover bg-center flex flex-col items-center justify-center text-center text-black"
+        style={{ backgroundImage: "url('/african.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 text-center max-w-3xl px-8"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2 className="text-4xl font-semibold drop-shadow-lg text-white">
+            A United voice for South African craft. Representing, advocating,
+            and creating opportunities for all
+          </h2>
+          <p className="text-lg text-white mt-4">
+            The Mzansi Craft Council (MCC) is South Africa’s national,
+            independent craft organization, dedicated to unifying, advocating
+            for, and supporting crafters across all disciplines. Whether you are
+            a rural artisan, an emerging innovator, or an established master in
+            the field, MCC exists to ensure fair representation, access to
+            markets, and opportunities to thrive.
+          </p>
+          <div className="mt-6 space-x-4">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-[#d9a36acc] hover:bg-[#c48b50] text-white px-6 py-2 rounded"
+            >
+              Join the Directory
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-white text-[#5a4636] px-6 py-2 border rounded"
+            >
+              Explore Craft Categories
+            </motion.button>
+          </div>
+        </motion.div>
+      </header>
+
+      {/* Featured Sections */}
+      <section className="container mx-auto px-6 py-6">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-3xl font-bold text-center mb-6"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          Discover South African Craft
+        </motion.h3>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {[
+            "National Craft Directory",
+            "AI Craft Assist",
+            "Market & Export Access",
+            "Training & Development",
+          ].map((title, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-white p-6 rounded-lg shadow-md text-center border border-[#d9a36a]"
+            >
+              <h4 className="text-xl font-semibold">{title}</h4>
+              <p className="text-[#5a4636] mt-2">
+                {index === 0 &&
+                  "Find artisans by craft type, region, and expertise."}
+                {index === 1 &&
+                  "Get instant help on funding, policies, and events."}
+                {index === 2 &&
+                  "Explore exhibitions, buyers, and global opportunities."}
+                {index === 3 &&
+                  "Offering workshops, mentorship programs, and business skills."}
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={`mt-4 text-white px-4 py-2 rounded ${
+                  index < 2 ? "bg-[#8c5c3b]" : "bg-[#b33b3b]"
+                }`}
+              >
+                {index === 0 ? "Browse Directory" : "Learn More"}
+              </motion.button>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="bg-gradient-to-r from-black to-gray-900 text-white text-center p-4 mt-10">
+        <p className="text-sm">
+          © {new Date().getFullYear()} Mzansi Craft Council | Designed by
+          WebCraft Solutions
+        </p>
       </footer>
+
+      <motion.button
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-6 right-6 bg-[#8c5c3b] text-white p-4 rounded-full shadow-lg hover:bg-[#a47551]"
+      >
+        🤖 Chat with MCC AI
+      </motion.button>
     </div>
   );
 }
